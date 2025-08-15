@@ -2,7 +2,7 @@ name: Blog Agibank E2E • Cypress + Cucumber
 
 on:
   push:
-    branches: [main, develop, pipeline/include-github-workflows-to-ci/cd]
+    branches: [main, develop]
   pull_request:
     branches: [main, develop]
 
