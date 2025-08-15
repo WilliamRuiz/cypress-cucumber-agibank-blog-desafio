@@ -1,7 +1,7 @@
 {
   "name": "projeto-desafio-agibank",
   "version": "1.0.0",
-  "description": "Escolha a linguagem de programação de sua preferência para automatizar os dois principais cenários da questão anterior.",
+  "description": "Automação de testes end-to-end (E2E) utilizando Cypress e Cucumber (BDD) para validar cenários funcionais no Blog do Agibank.",
   "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
