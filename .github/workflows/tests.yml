@@ -43,7 +43,7 @@ jobs:
           cat package.json || true
 
       - name: Run Cypress
-        run: npm cypress run
+        run: npx cypress run
 
       - name: Upload videos
         if: always()
