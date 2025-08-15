@@ -43,9 +43,7 @@ jobs:
           cat package.json || true
 
       - name: Run Cypress
-        run: |
-          cd cypress-cucumber-agibank-blog-desafio | 
-          npm cypress run
+        run: npm cypress run
 
       - name: Upload videos
         if: always()
