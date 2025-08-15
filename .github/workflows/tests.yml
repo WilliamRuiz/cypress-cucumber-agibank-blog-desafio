@@ -2,18 +2,12 @@ name: Blog Agibank E2E • Cypress + Cucumber
 
 on:
   push:
-    branches: [ main, develop, pipeline/include-github-workflows-to-ci/cd]
-    paths:
-      - "cypress/**"
-      - "package.json"
-      - "package-lock.json"
-      - "cypress.config.*"
-      - ".github/workflows/tests.yml"
+    branches: [main, develop, pipeline/include-github-workflows-to-ci/cd]
   pull_request:
-    branches: [ main, develop]
+    branches: [main, develop]
 
   schedule:
-    - cron: "0 3 * * *"   # 03:00 UTC, diariamente
+    - cron: "0 3 * * *" # 03:00 UTC, diariamente
   workflow_dispatch:
 
 permissions:
@@ -27,7 +21,8 @@ jobs:
       fail-fast: false
       matrix:
         node: [20]
-        browser: [chrome] 
+        browser: [chrome]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,14 +36,17 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Cypress run (Cucumber)
+      - name: Debug list
+        run: |
+          pwd
+          ls -la
+          cat package.json || true
+
+      - name: Run Cypress
         uses: cypress-io/github-action@v6
         with:
-          browser: ${{ matrix.browser }}
-          command: >
-            npx cypress run
-            --browser ${{ matrix.browser }}
-            --config-file cypress.config.ts
+          browser: chrome
+          config-file: cypress.config.ts  
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
