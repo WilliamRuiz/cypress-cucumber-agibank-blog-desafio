@@ -72,6 +72,12 @@ npx cypress run
 npx cypress open
 ```
 
+### Os resultados via terminal
+
+![Status](images/testes_status.png)
+![Resultados](images/tests_results.png)
+
+
 ---
 
 ## 📊 Relatórios  
