@@ -71,6 +71,10 @@ npx cypress run
 ```bash
 npx cypress open
 ```
+### Os resultados via terminal
+
+![Status](images/testes_status.png)
+![Resultados](images/tests_results.png)
 
 ---
 
