@@ -43,7 +43,7 @@ jobs:
           cat package.json || true
 
       - name: Run Cypress
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v4
         with:
           browser: chrome
           config-file: cypress.config.ts  
