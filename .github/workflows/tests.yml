@@ -43,12 +43,9 @@ jobs:
           cat package.json || true
 
       - name: Run Cypress
-        uses: cypress-io/github-action@v4
-        with:
-          browser: chrome
-          config-file: cypress.config.ts  
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd cypress-cucumber-agibank-blog-desafio | 
+          npm cypress run
 
       - name: Upload videos
         if: always()
